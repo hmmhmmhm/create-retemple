@@ -1,6 +1,6 @@
 {
   "name": "create-retemple",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create an on-the-fly template that makes it easy to create a React Library.",
   "type": "module",
   "main": "./bin/index.js",
