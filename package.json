@@ -16,7 +16,8 @@
     "node": "^18.0.0 || >=20.0.0"
   },
   "files": [
-    "index.js",
+    "bin/*",
+    "dist/*",
     "templates/*"
   ],
   "author": "hmmhmmhm",
