@@ -1,0 +1,34 @@
+{
+  "name": "create-retemple",
+  "version": "0.0.1",
+  "description": "Create an on-the-fly template that makes it easy to create a React Library.",
+  "type": "module",
+  "main": "./bin/index.js",
+  "scripts": {
+    "build": "swc ./src -d ./dist",
+    "dev": "npm run build && node ./bin/index.js",
+    "release": "release-it"
+  },
+  "bin": {
+    "create-retemple": "./bin/index.js"
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "files": [
+    "index.js",
+    "templates/*"
+  ],
+  "author": "hmmhmmhm",
+  "license": "MIT",
+  "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.4.12",
+    "release-it": "^17.1.1"
+  },
+  "release-it": {
+    "hooks": {
+      "before:init": "npm run build"
+    }
+  }
+}
