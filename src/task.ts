@@ -62,6 +62,32 @@ export const runTasks = async (answer: AskAnswer) => {
           });
         }
       );
+      await task(
+        "Build project...",
+        async ({ task, setError, setTitle, setStatus, setOutput }) => {
+          // * call npm install in cwd
+          await new Promise<void>((resolve) => {
+            exec(
+              `npm run build`,
+              {
+                cwd: answer.isCreateFolder
+                  ? `${process.cwd()}/${answer.projectName}`
+                  : process.cwd(),
+              },
+              (error: any, stdout) => {
+                if (error) {
+                  setError(error);
+                  resolve();
+                  return;
+                }
+                setOutput(stdout);
+                setTitle("Project built successfully");
+                resolve();
+              }
+            );
+          });
+        }
+      );
     }),
     task("Cleanup", async ({ setOutput }) => {
       setOutput(
