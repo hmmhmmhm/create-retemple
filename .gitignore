@@ -134,3 +134,6 @@ dist
 
 # Build files
 dist
+
+# Test files
+e2e
