@@ -94,7 +94,7 @@ export const runTasks = async (answer: AskAnswer) => {
         chalk.green(
           `\n🚀 Successfully created a new project!\n👉 ${
             answer.isCreateFolder &&
-            `cd ${process.cwd()}/${answer.projectName} && `
+            `cd ${answer.projectName} && `
           }npm run dev\n`
         )
       );
